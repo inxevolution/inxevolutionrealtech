@@ -1,127 +1,172 @@
 # In X Evolution — Architecture Baseline
 
-**Version:** 0.1  
+**Version:** 0.2  
 **Date:** 23 November 2026  
-**Status:** Conceptual proposal — not an implemented architecture
+**Status:** Conceptual proposal — no application architecture is implemented
 
 ## 1. Architecture position
 
-The repository currently contains no application source code, deployment configuration, database schema or interface definitions. Therefore, this document defines architecture principles and a technology-neutral discovery model. It does not assert that any component is already deployed.
+In X Evolution is being defined as a brand-led digital business ecosystem with shared governance and distinct business-line responsibilities. The repository currently contains documentation only; it does not contain an application, database, deployment environment or integration code.
 
-The detailed architecture must follow approved business requirements, data classification, security analysis, scale expectations and budget.
+The architecture must enable shared operations without collapsing the security, data ownership, financial reporting or regulatory boundaries between business lines.
 
 ## 2. Architecture principles
 
-1. **Business and user outcomes first:** technology choices must trace to approved requirements.
-2. **Simplicity before distribution:** begin with the least complex architecture that satisfies the requirements; introduce services or queues only when justified.
-3. **Modularity:** define clear responsibilities and stable boundaries.
-4. **Security by design:** authenticate, authorise, validate and audit at appropriate trust boundaries.
-5. **Privacy by design:** collect the minimum necessary data and define purpose, access, retention and deletion.
-6. **Interoperability:** use documented interfaces and explicit data contracts where integration is required.
-7. **Observability:** design appropriate logs, metrics and traces before production operation.
-8. **Testability:** make critical behaviours verifiable through automated and manual tests.
-9. **Recoverability:** define backup, restoration and incident processes according to business impact.
-10. **Portability and reversibility:** avoid unnecessary provider lock-in and document migration implications.
+1. Business outcomes and validated user needs first.
+2. Simple modular design before distributed services.
+3. Clear boundaries between Real Technology, Invest, SHOP and community.
+4. Shared governance and reporting with appropriately separated data access.
+5. Security and privacy by design.
+6. Explicit data ownership and source-of-truth rules.
+7. Documented APIs and integration failure handling.
+8. Traceability, testability and observability.
+9. Recoverability and controlled change.
+10. Portability, data export and provider exit planning.
 
-## 3. Conceptual system context
+## 3. Portfolio context view
 
-The following is a discovery placeholder. External actors, systems and data flows must be validated with stakeholders.
+The following is a proposed business/technology context, not an implementation diagram.
+
+```mermaid
+flowchart TB
+    U[Customers, users and community] --> X[In X Evolution ecosystem]
+    O[Owner and portfolio governance] --> X
+    X --> RT[Real Technology]
+    X --> IV[Invest]
+    X --> SH[SHOP]
+    X --> CM[Community / Real Telegram]
+    RT -. approved interfaces .-> EXT[External technology providers]
+    IV -. research and approved operational data .-> FIN[Third-party financial / mining platforms]
+    SH -. approved commerce flows .-> PAY[Payment and fulfilment providers]
+    X --> GOV[Shared governance, finance, risk and reporting]
+```
+
+No provider, data exchange, transaction or deployed system is confirmed by this diagram.
+
+## 4. Proposed logical architecture
+
+### 4.1 Shared enterprise capabilities
+
+- Portfolio and business-line registry.
+- User identity, roles and access management.
+- Customer/partner relationship management.
+- Product and service catalogue.
+- Workflow, task, approvals and audit records.
+- Financial management reporting and cost attribution.
+- Document and knowledge management.
+- Notifications, monitoring and management dashboards.
+
+Shared capabilities must support business-line scoping and separation.
+
+### 4.2 Business-line capabilities
+
+| Area | Candidate responsibilities | Isolation requirement |
+|---|---|---|
+| Real Technology | Projects, requirements, delivery, support, integrations and service-level evidence | Client and project data protected by assignment and role |
+| Invest | Research sources, provider checks, internal activity/Mining records, cost and realised-result tracking | Strict separation of internal activity data, user information and credentials |
+| SHOP | Products, sellers, orders, payment references, fulfilment, returns and support | Customer and transaction access restricted |
+| Community | Content, announcements, moderation, member support and consent | Public community content separated from private customer records |
+
+### 4.3 Conceptual application boundary
 
 ```mermaid
 flowchart LR
-    U[Users and stakeholders] --> X[In X Evolution]
-    O[Project operations] --> X
-    X -. only if approved .-> E[External services / integrations]
-    X -. operational evidence .-> M[Monitoring and audit]
+    UI[Web / mobile / messaging channels] --> IAM[Identity and access]
+    UI --> APP[Application and business workflows]
+    IAM --> APP
+    APP --> DOM[Business-line modules]
+    DOM --> DATA[Authoritative data stores]
+    DOM --> INT[Integration boundary]
+    APP --> AUD[Audit and observability]
+    INT --> EXT[Approved third-party systems]
 ```
 
-No particular external provider or integration is confirmed by this diagram.
+The actual channels, services, data stores and identity technology remain undecided.
 
-## 4. Logical capability boundaries
+## 5. Architectural style recommendation
 
-These are candidate architecture responsibilities, not implemented modules:
+Begin with a **modular monolith** unless validated requirements demonstrate a need for independent deployment, high scale, team autonomy or fault isolation. Define domain boundaries and API contracts from the start so that components can be separated later if justified.
 
-| Boundary | Responsibility to define | Key design question |
-|---|---|---|
-| Experience layer | User and operator interaction | Web, mobile, API, or another channel? |
-| Identity and access | Authentication, roles and permissions | Which identity model and assurance level? |
-| Business capability layer | Approved business rules and workflows | What are the actual capabilities? |
-| Data layer | Persistence, search, retention and export | Which data, volume, sensitivity and consistency? |
-| Integration boundary | External APIs and events | Which systems and contractual interfaces? |
-| Operations layer | Monitoring, audit, backups and recovery | What operational service level is required? |
+Do not introduce microservices, event streaming or complex infrastructure solely to appear enterprise-grade. Each additional component creates operational, security and financial cost.
 
-## 5. Architecture views to produce
+## 6. Data architecture
 
-Before implementation, create and approve:
+Candidate domains:
+- Portfolio, legal entities and business units.
+- Users, roles and access grants.
+- Leads, customers, organisations and support cases.
+- Products, services, suppliers and partners.
+- Projects, tasks, quotes, contracts and orders.
+- Financial references, costs, invoices and payment reconciliation metadata.
+- Invest research sources and internal Mining activity records.
+- SHOP catalogue, seller, order and fulfilment records.
+- Community content and moderation records.
+- Audit events, documents and consent/notice records.
 
-- **System context view:** users, neighbouring systems, trust boundaries and data flows.
-- **Container view:** deployable applications, databases, queues and their relationships.
-- **Component view:** internal responsibilities for complex containers.
-- **Deployment view:** environments, network boundaries, secrets, backups and observability.
-- **Data view:** logical entities, ownership, classification, retention and lifecycle.
-- **Threat view:** assets, actors, attack surfaces, trust boundaries and mitigations.
+For every domain, define owner, source of truth, classification, access, retention, export and correction policy.
 
-Use C4-style diagrams where they improve communication. Do not create detail that cannot yet be supported by requirements.
+Do not store broker passwords, wallet seed phrases, private keys, full payment-card data or unrestricted API tokens in application records or Airtable.
 
-## 6. Technology selection criteria
+## 7. Airtable boundary
 
-Evaluate candidate technologies against:
+Airtable has previously been identified as the intended enterprise operations integration for In X Evolution Invest. It may be evaluated as an operational register/workflow layer for approved records, subject to capability, access, audit, cost and data-residency review.
 
-| Criterion | Questions |
-|---|---|
-| Functional fit | Does it support the approved use cases? |
-| Security | Are security controls, patching and access management adequate? |
-| Privacy and compliance | Can data residency, retention, deletion and audit obligations be met? |
-| Maintainability | Can the team operate and evolve it? |
-| Interoperability | Are APIs, export and integration options documented? |
-| Reliability | What are failure modes, recovery options and service guarantees? |
-| Performance | Does it meet measured workload requirements? |
-| Cost | What are setup, usage, support and exit costs? |
-| Portability | How difficult is migration or replacement? |
-| Ecosystem | Are dependencies maintained and supported? |
+Before implementation:
+- Approve base/table ownership and data model.
+- Identify Airtable versus external system source-of-truth fields.
+- Preserve the three Mining records identified by the project owner.
+- Test create, read, update and reconciliation on non-destructive sample data first.
+- Keep secrets and sensitive credentials out of Airtable.
+- Require explicit confirmation before deletion or destructive restructuring.
+- Do not treat Airtable as a regulated custodian, payment system or statutory accounting ledger.
 
-The programming language, framework, database, cloud provider and hosting model remain **undecided**.
+## 8. Integration architecture
 
-## 7. Data architecture requirements
+Each integration needs:
+- Named owner, business purpose and approved scope.
+- Provider due diligence and contract review.
+- Documented API schema, version and authentication.
+- Minimum required scopes and protected secrets.
+- Validation, timeout, retry and duplicate-processing strategy.
+- Rate-limit and provider outage handling.
+- Audit and monitoring.
+- Data retention, export and provider-exit procedure.
 
-Before selecting a data store:
+## 9. Security and privacy architecture
 
-1. Identify data subjects, data owners and business entities.
-2. Classify data by sensitivity and business criticality.
-3. Define data quality, uniqueness, consistency and lifecycle rules.
-4. Identify personal data and document purpose, lawful basis and retention requirements where applicable.
-5. Define access control, encryption, backup and deletion.
-6. Specify import/export and migration requirements.
-7. Create a data dictionary and schema migration policy.
+- Use centralised identity where appropriate and role-based authorisation.
+- Separate production from development and test.
+- Restrict privileged access and use strong authentication.
+- Encrypt sensitive traffic and storage according to risk.
+- Keep secrets in an approved secret manager.
+- Protect logs from personal and financial data leakage.
+- Maintain data-flow and threat models.
+- Assess GDPR and other applicable obligations before collecting personal data.
 
-## 8. API and integration requirements
+## 10. Deployment and operations
 
-For every approved integration, document:
+The deployment model is not selected. Before production, define:
+- Hosting and network architecture.
+- Environment separation.
+- Build and release pipeline.
+- Secrets/configuration management.
+- Monitoring, alerting and audit collection.
+- Backup, restore, RPO and RTO.
+- Incident response and support ownership.
+- Cost monitoring and capacity limits.
 
-- Business purpose and accountable owner.
-- System of record for each data element.
-- API contract, versioning and authentication.
-- Input validation and error semantics.
-- Rate limits, timeouts, retries and idempotency.
-- Data minimisation and retention.
-- Monitoring, incident ownership and vendor exit plan.
+## 11. Technology selection criteria
 
-No integration is assumed to exist.
+Evaluate programming language, framework, database, hosting, identity, analytics and integration tools against requirements, team skills, maintainability, security, privacy, cost, availability, data export and reversibility.
 
-## 9. Environments and delivery
+No particular language, framework, database or cloud vendor is approved in this document.
 
-A future implementation should define separate environments appropriate to risk, typically development, test/staging and production. Production credentials and data must not be copied into development.
+## 12. Architecture exit criteria
 
-The release design should specify reproducible builds, configuration management, approvals, migrations, monitoring and rollback/recovery. Exact tools are pending technology selection.
-
-## 10. Architecture exit criteria
-
-Architecture is ready for implementation when:
-
-- The problem statement, actors and high-priority workflows are approved.
-- Functional and non-functional requirements are baselined.
-- Data classification and important data flows are understood.
-- Threats and trust boundaries are assessed.
-- Technology choices have documented ADRs.
-- Deployment, backup, monitoring and recovery responsibilities are assigned.
-- Acceptance and test strategy are agreed.
+- Purpose, first business line and user journeys approved.
+- High-priority enterprise requirements testable.
+- Business-line and data boundaries documented.
+- Legal, privacy and security risks assessed.
+- Technology decisions recorded in ADRs.
+- Costed deployment model approved.
+- Integration and recovery procedures reviewed.
