@@ -52,6 +52,11 @@ Portfolio names and public references require owner confirmation. They do not es
 - The repository uses [The Unlicense](LICENSE). Read the license text and check the terms of third-party assets or separately licensed materials before reuse.
 - The previous root-level `index.html` is retained unchanged for backward compatibility; the canonical version is the one in `landing-page/`.
 
+## Python 3 workspace
+
+- [Python 3 project folder](python3/README.md) — isolated package, CLI starter, tests and setup instructions.
+- The Python workspace is independent from the static landing page and the enterprise documentation. It currently provides a minimal standard-library CLI foundation, not a production product.
+
 ## Start here
 
 - [Project Wiki — Home](docs/wiki/Home.md)
