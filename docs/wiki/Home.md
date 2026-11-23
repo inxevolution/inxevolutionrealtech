@@ -2,12 +2,13 @@
 
 **Purpose:** Main navigation for the project knowledge base.  
 **Status:** Strategy and discovery.  
-**Version:** 0.1.
+**Version:** 0.2.
 
 ## Start here
 
 - [Project overview](Project-Overview.md)
 - [Strategy, mission and vision](Strategy-Mission-Vision.md)
+- [100-year longevity plan](100-Year-Longevity-Plan.md)
 - [Business portfolio](Business-Portfolio.md)
 - [Products and services](Products-and-Services.md)
 - [Stakeholders and roles](Stakeholders-and-Roles.md)
