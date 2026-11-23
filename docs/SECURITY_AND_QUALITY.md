@@ -1,127 +1,132 @@
 # In X Evolution — Security, Privacy and Quality Baseline
 
-**Version:** 0.1  
+**Version:** 0.2  
 **Date:** 23 November 2026  
-**Status:** Baseline proposal — applicability review required
+**Status:** Control baseline — applicability and implementation review required
 
 ## 1. Purpose
 
-This document establishes minimum engineering controls for future In X Evolution implementation. It is not a security certification, compliance assessment or statement that controls have already been implemented.
+This document establishes minimum controls for future In X Evolution products and operations. It is not a certification, legal opinion or statement that the controls have already been implemented.
 
-## 2. Secure development baseline
+## 2. Portfolio-specific trust boundaries
+
+In X Evolution is considering multiple business lines: Real Technology, Invest, SHOP and community. They may share selected enterprise capabilities, but must not automatically share all records or access rights.
+
+- Technology client code, data and credentials are confidential to the authorised delivery team.
+- Invest research and internal records must be distinguished from customer assets and third-party account credentials.
+- SHOP customer, order and payment references must be restricted to operational roles.
+- Community membership and communication data must not become a general marketing list without an appropriate basis and user information.
+- Shared management reporting should use the minimum data necessary.
+
+## 3. Secure development baseline
 
 ### Identity and access
-
-- Require individual identities for privileged access.
-- Apply least privilege and role separation where appropriate.
-- Use multi-factor authentication for administrative and production access where supported.
-- Review permissions periodically and remove access when no longer required.
-- Do not share personal access tokens or credentials.
+- Individual identities for privileged access.
+- Least privilege and role separation.
+- Strong authentication, including MFA for privileged access where supported.
+- Periodic permission reviews and prompt removal of obsolete access.
+- No shared passwords or access tokens.
 
 ### Secrets and configuration
-
-- Never commit passwords, API keys, private keys, recovery codes or production tokens.
+- Never commit passwords, API keys, private keys, wallet seed phrases, recovery codes or production tokens.
 - Store secrets in an approved secret manager or protected environment configuration.
-- Rotate exposed credentials immediately and investigate their use.
+- Rotate exposed credentials and investigate possible misuse.
 - Keep development, test and production configuration separate.
 
 ### Application security
-
-- Validate all untrusted input on the server side.
-- Apply context-appropriate output encoding and safe query construction.
-- Enforce authorisation on every protected operation, not only in the user interface.
+- Validate untrusted input on the server side.
+- Use safe query construction and context-appropriate output encoding.
+- Enforce authorisation at every protected operation.
 - Use secure session and token handling.
-- Apply rate limiting and abuse protections where relevant.
-- Use maintained dependencies and review security advisories.
-- Produce auditable security-relevant events while avoiding sensitive data in logs.
+- Apply rate limits and abuse controls where appropriate.
+- Maintain dependencies and assess security advisories.
+- Avoid logging secrets, full payment data or unnecessary personal information.
 
-### Infrastructure and operations
-
+### Operations
 - Restrict network exposure and administrative interfaces.
-- Encrypt sensitive data in transit and at rest where appropriate to its classification.
 - Patch supported operating systems, runtimes and dependencies.
-- Define backup, restore and incident-response procedures before production.
-- Test restoration; a backup that has never been restored is not proven.
+- Define backup, restore and incident procedures before production.
+- Test recovery rather than merely assuming backups work.
 
-## 3. Privacy baseline
+## 4. Privacy baseline
 
-Before processing personal data, identify:
+Before personal data processing, document data subjects, categories, purposes, lawful basis, recipients, processors, transfers, retention, deletion, data-subject rights and security measures.
 
-- Data subjects and categories of personal data.
-- Specific purposes and applicable lawful basis.
-- Data controller, processors and recipients, where applicable.
-- Data sources, destinations and international transfers.
-- Retention periods and deletion procedures.
-- Access, correction, export and other data-subject rights processes.
-- Security measures and breach escalation responsibilities.
+Apply the GDPR principles where the Regulation applies: lawfulness, fairness, transparency, purpose limitation, data minimisation, accuracy, storage limitation, integrity/confidentiality and accountability. Implement privacy by design and by default.
 
-Apply data minimisation and privacy by design. Do not use real personal data in examples, tests, issues or fixtures unless specifically authorised and protected.
+Reference: [European Commission — Principles of the GDPR](https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/principles-gdpr_en).
 
-The applicability of GDPR and national implementing law must be assessed against the actual processing, roles and jurisdictions. This document is not legal advice.
+## 5. Financial and regulated-activity safeguards
 
-## 4. Secure engineering lifecycle
+The word “Invest” or public links to investment platforms do not establish permission to provide financial services.
 
-For each material feature:
+Before any Invest offer is published or delivered, classify the exact activity and obtain qualified legal review where required. Distinguish:
+- General factual or educational information.
+- Advertising, referrals and affiliate marketing.
+- Personalised investment recommendations.
+- Reception/transmission or execution of orders.
+- Portfolio management, custody or control of customer assets.
+- Payment or electronic-money services.
+- Crypto-asset services and other potentially regulated activities.
+
+Do not offer regulated activities unless the legal entity, jurisdiction, authorisation and operating arrangements have been confirmed. Verify counterparties and disclose material conflicts and commercial relationships. Do not promise returns or treat mining rewards or token values as guaranteed.
+
+Useful official checks for Portugal:
+- [CMVM — Authorised entities](https://investidor.cmvm.pt/PInvestidor/Content?Input=07D419590495176787CBC8290D95B30F1235C4ACE874EA8E408B180D23294F55&_ts=1720828800034)
+- [Banco de Portugal — Institutions and authorised activities](https://clientebancario.bportugal.pt/pt-pt/instituicoes)
+
+These references do not determine the classification of In X Evolution's activities; obtain advice based on the actual service.
+
+## 6. Commerce and partner safeguards
+
+For SHOP and any affiliate offer:
+- Identify seller of record and responsible service provider.
+- Confirm accurate product information, total price, taxes and delivery terms.
+- Define returns, refunds, warranty and support responsibility.
+- Disclose sponsorship and affiliate relationships.
+- Verify partner identity, contract, data access and complaint escalation.
+- Do not imply third-party endorsement or ownership without evidence.
+
+## 7. Secure engineering lifecycle
 
 1. Identify assets, actors, abuse cases and trust boundaries.
 2. Define security and privacy requirements.
-3. Review design and dependencies.
+3. Review design, providers and dependencies.
 4. Implement controls with peer review.
 5. Test positive, negative, boundary and permission cases.
-6. Scan dependencies and source code as appropriate.
-7. Review release configuration and secrets.
-8. Monitor and respond to findings after release.
+6. Scan dependencies and source where appropriate.
+7. Review deployment configuration and secrets.
+8. Monitor, patch and respond to findings.
 
-## 5. Testing strategy
+## 8. Testing strategy
 
-Use the testing level that best validates each behaviour:
+| Test type | Purpose |
+|---|---|
+| Unit | Verify isolated business rules, calculations and validation |
+| Integration | Verify database, identity and third-party boundaries |
+| E2E | Verify priority customer and operator journeys |
+| Security | Verify authentication, authorisation, input safety and secret handling |
+| Data reconciliation | Verify finance, mining and integration records against their authoritative source |
+| Performance | Verify behaviour under agreed workloads |
+| Accessibility | Evaluate inclusive interaction in user-facing interfaces |
+| Recovery | Verify backup restoration and documented recovery processes |
 
-| Test level | Purpose | Example |
-|---|---|---|
-| Unit | Verify an isolated function or domain rule | Validation and calculation |
-| Integration | Verify collaboration across boundaries | Application with database or API |
-| End-to-end (E2E) | Verify a complete user-critical workflow | User completes an approved journey |
-| Security | Verify resistance to misuse and common weakness classes | Access-control and input-validation tests |
-| Performance | Verify behaviour under defined load | Load, stress and endurance tests |
-| Accessibility | Verify inclusive interaction | Keyboard and assistive-technology checks |
+Tests must be repeatable and linked to requirements.
 
-Tests must be repeatable. Critical business rules should not depend only on E2E tests.
-
-## 6. Quality controls
-
-- Use consistent formatting and static analysis appropriate to the selected stack.
-- Require review for changes to protected or high-risk areas.
-- Keep functions and modules cohesive and avoid unnecessary coupling.
-- Treat warnings and test failures as release signals, not as noise to suppress.
-- Document public interfaces and configuration.
-- Maintain dependency inventory and update policy.
-- Record known defects and accepted risks with owners and review dates.
-
-## 7. Release-readiness checklist
+## 9. Release-readiness checklist
 
 - [ ] Requirements and acceptance criteria approved.
 - [ ] Code reviewed and required tests passing.
-- [ ] No unresolved critical or high security finding without explicit risk acceptance.
+- [ ] No unresolved critical/high issue without authorised risk acceptance.
 - [ ] Secrets and configuration checked.
-- [ ] Data migrations and rollback/recovery assessed.
-- [ ] Monitoring, alerting and support ownership defined.
-- [ ] Backup and restore procedures tested where applicable.
-- [ ] User and operator documentation updated.
-- [ ] Release approval recorded.
+- [ ] Personal data and financial activity reviewed.
+- [ ] Provider integrations and permissions verified.
+- [ ] Migrations and rollback/recovery assessed.
+- [ ] Monitoring and support owner defined.
+- [ ] Documentation and user-facing disclosures updated.
 
-## 8. Incident handling
+## 10. Incident handling
 
-A future operational runbook should define severity levels, responsible contacts, containment, evidence preservation, recovery, communications, legal/privacy escalation and post-incident review.
+An operational runbook must define severity, contacts, containment, evidence preservation, recovery, communications, privacy/legal escalation and post-incident review.
 
-Do not publish exploit details, credentials or sensitive incident evidence in public issues.
-
-## 9. Reference frameworks
-
-Use current authoritative versions when implementation begins:
-
-- OWASP Application Security Verification Standard (ASVS) and OWASP Top 10.
-- NIST Secure Software Development Framework (SSDF).
-- ISO/IEC 27001 and 27002 where an information-security management system is in scope.
-- GDPR and applicable national law where personal-data processing falls within their scope.
-
-The project must verify current editions and applicability before claiming alignment or compliance.
+Report suspected vulnerabilities privately. Do not publish credentials, exploit details or sensitive customer evidence in public repository issues.
