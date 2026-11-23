@@ -1,6 +1,6 @@
-# In X Evolution — Landing Page
+# In X Evolution — Real Technology Landing Page
 
-Standalone static landing page for the In X Evolution project.
+Standalone, responsive landing page for the In X Evolution Real Technology area.
 
 ## Structure
 
@@ -11,35 +11,44 @@ landing-page/
 └── assets/
     ├── css/
     │   └── styles.css
-    └── js/
-        └── main.js
+    ├── js/
+    │   └── main.js
+    └── images/
+        └── favicon.svg
 ```
 
-## Preview locally
+## Local preview
 
-Open `index.html` in a modern browser. No build step, package installation or backend is required.
-
-For a local HTTP preview, run from the repository root:
+From the repository root, run:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000/landing-page/`.
+Open `http://localhost:8000/landing-page/` in a browser.
+
+No package installation, build step, backend or third-party JavaScript dependency is required.
+
+## Features
+
+- Responsive desktop, tablet and mobile layouts.
+- Semantic page structure, skip link and keyboard focus styles.
+- Accessible mobile navigation with Escape-to-close behaviour.
+- Reduced-motion preference support.
+- Lightweight scroll-reveal effects with an Intersection Observer fallback.
+- Search/social metadata and a standalone SVG favicon.
+- Dedicated open-source section linking to the repository's license.
+
+## License
+
+The repository root contains **The Unlicense**. Read the exact license text in [../LICENSE](../LICENSE) or visit [unlicense.org](https://unlicense.org/).
+
+The Unlicense dedicates the covered software to the public domain to the extent recognised by applicable law and provides the software "AS IS", without warranties or liability. Do not assume that third-party assets, trademarks, brand names, external services or separately licensed materials are covered by the repository license; verify their terms independently.
+
+## Content status
+
+The page describes proposed capabilities and strategic direction. It does not claim that every service is currently available, that a corporate structure has been legally established, or that regulated services are authorised.
 
 ## Deployment
 
-This is static HTML, CSS and JavaScript. It can be deployed using GitHub Pages or another static host. Hosting, custom domain, analytics, forms and external services are not configured by this folder.
-
-## Content and claims
-
-The page deliberately describes the portfolio as proposed and the project as being in strategy/discovery. Do not publish claims that products, services, legal entities, partnerships or regulated permissions exist unless verified and approved.
-
-## Accessibility and maintenance
-
-- Semantic landmarks and headings.
-- Skip-to-content link and visible keyboard focus.
-- Mobile navigation with an accessible expanded state.
-- Reduced-motion preference respected.
-- CSS and JavaScript separated from HTML.
-- No third-party runtime dependencies.
+The files are static and can be hosted through GitHub Pages or another static host. Public hosting, a custom domain, analytics and contact-form processing are not configured by this directory.
