@@ -1,0 +1,27 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+
+# Coverage and test artifacts
+.coverage
+htmlcov/
+.tox/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
