@@ -1,9 +1,9 @@
 # In X Evolution — Open Decisions Register
 
-**Version:** 0.2  
+**Version:** 0.3  
 **Date:** 23 November 2026
 
-This register prevents assumptions from silently becoming business or technical commitments. Every decision needs an owner, evidence, impact assessment and approval. Items are prioritised for Phase 1.
+This register prevents assumptions from silently becoming business or technical commitments. Every decision needs an owner, evidence, impact assessment and approval. Items are prioritised for discovery and delivery.
 
 ## Priority 0 — required to approve the project definition
 
@@ -31,6 +31,10 @@ This register prevents assumptions from silently becoming business or technical 
 | DEC-015 | How will the three Mining records be reconciled and preserved during Airtable work? | Prevents accidental data loss | Invest owner | Must be verified before changes |
 | DEC-016 | Should the GitHub repository remain public and is The Unlicense appropriate for intended commercial IP? | Affects IP, confidentiality and reuse | Project owner / legal adviser | Open |
 | DEC-017 | Which payment, commerce, CRM, identity and communication providers are required? | Controls vendor and integration risk | Product / technical owners | Open |
+| DEC-024 | What records and assets are critical enough to require long-term preservation, and what must be deleted under retention rules? | Defines archive scope and privacy obligations | Data owner / privacy lead | Open |
+| DEC-025 | What is the succession and authority-transfer process for critical roles, domains, repositories and service accounts? | Prevents single-person dependency | Project owner | Open |
+| DEC-026 | Which systems use cryptography, who owns the inventory, and how will algorithms and keys be migrated? | Supports long-term security and post-quantum transition | Security / technical lead | Open |
+| DEC-027 | What data export, archive and vendor-exit formats are mandatory for each critical system? | Reduces lock-in and data-loss risk | Technical / data owner | Open |
 
 ## Priority 2 — required before relevant launch
 
