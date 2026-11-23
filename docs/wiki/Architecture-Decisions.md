@@ -7,10 +7,11 @@ Architecture Decision Records (ADRs) explain significant technical choices and t
 | ID | Title | Status |
 |---|---|---|
 | ADR-0001 | Documentation-first project foundation | Proposed |
+| ADR-0002 | Century-scale adaptability and stewardship | Proposed |
 
 ## When to create an ADR
 
-Create an ADR for choices that materially affect security, data, cost, scalability, portability, team workflow or architecture. Examples include programming language, database, cloud provider, identity model, integration pattern and repository licence/visibility.
+Create an ADR for choices that materially affect security, data, cost, scalability, portability, team workflow or architecture. Examples include programming language, database, cloud provider, identity model, integration pattern, archival formats, cryptographic agility and repository licence/visibility.
 
 ## ADR template
 
