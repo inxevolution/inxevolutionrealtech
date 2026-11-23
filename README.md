@@ -44,6 +44,18 @@ Portfolio names and public references require owner confirmation. They do not es
 **Working branch:** docs/in-x-evolution-foundation.  
 **Review:** [Pull Request #3](https://github.com/inxevolution/inxevolutionrealtech/pull/3).
 
+## Phase 2 — Solution design
+
+The Phase 2 design baseline is proposed and awaits review. It remains technology-neutral until the pilot, requirements, legal boundaries and budget are approved.
+
+- [Phase 2 Solution Design](docs/PHASE_2_SOLUTION_DESIGN.md)
+- [C4 Context View](docs/architecture/C4_CONTEXT.md)
+- [Logical Container Architecture](docs/architecture/LOGICAL_CONTAINERS.md)
+- [Data Architecture](docs/DATA_ARCHITECTURE.md)
+- [Non-Functional Requirements](docs/NON_FUNCTIONAL_REQUIREMENTS.md)
+- [Initial Threat Model](docs/THREAT_MODEL.md)
+- [ADR-0003 — Modular Monolith Candidate](docs/DECISIONS/ADR-0003-modular-monolith-default.md)
+
 ## Start here
 
 - [Project Wiki — Home](docs/wiki/Home.md)
