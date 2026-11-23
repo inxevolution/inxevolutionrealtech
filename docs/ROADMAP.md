@@ -1,113 +1,129 @@
 # In X Evolution — Delivery Roadmap
 
-**Version:** 0.1  
+**Version:** 0.2  
 **Date:** 23 November 2026  
-**Status:** Proposed sequence — no delivery dates committed
+**Status:** Proposed sequence — no delivery dates or budgets committed
 
 ## Delivery approach
 
-Use evidence-based phases with explicit exit criteria. Do not commit to implementation dates until scope, capacity, dependencies and budget are understood.
+Use stage gates and evidence. The portfolio must not launch every proposed business line simultaneously by default. Select one priority pilot based on validated demand, capability, legal risk and affordable delivery cost.
 
 ## Phase 0 — Repository foundation
 
-**Status:** In progress on branch `docs/in-x-evolution-foundation`.
+**Status:** Documentation baseline created on `docs/in-x-evolution-foundation`; draft PR #3 is open.
 
 Deliverables:
-- Project README and charter.
-- Requirements and architecture baselines.
-- Security, privacy and quality principles.
-- Initial delivery roadmap and open-decision register.
-- Contribution and change-control guidance.
+- Project charter, requirements and technology-neutral architecture.
+- Security, privacy and quality baseline.
+- Business strategy and portfolio hypotheses.
+- Stakeholder/user map.
+- Financial and technical constraints.
+- Roadmap, open decisions and contribution guidance.
 
 Exit criteria:
-- Documents are available for review.
-- Known facts are distinguishable from proposals.
-- Project owner is identified for approval.
+- Documentation reviewed.
+- Facts distinguished from hypotheses.
+- Project owner identified for approval.
 
-## Phase 1 — Discovery and validation
+## Phase 1 — Business and product discovery
 
 Deliverables:
-- Approved problem statement and project outcomes.
-- Stakeholder and target-user map.
-- Validated user journeys and business rules.
-- Scope, exclusions and constraints.
-- Measurable success criteria.
-- Initial risk register.
+- Approve purpose, mission, vision, values and strategic objectives.
+- Confirm brand ownership, legal entity and portfolio structure.
+- Select one first business line and target user segment.
+- Validate user problems and workflows.
+- Approve an initial product/service offer and exclusions.
+- Identify applicable legal, tax, consumer, privacy and sector regulation.
+- Define stakeholder roles and decision authority.
+- Prepare budget ceiling, resource plan and commercial hypotheses.
+- Define success metrics and a pilot decision.
 
 Exit criteria:
-- Project owner approves the charter and scope.
-- High-priority needs have evidence and acceptance criteria.
+- Project owner signs off the charter and strategy.
+- First customer segment, problem and offer have evidence.
+- Product owner and technical owner appointed.
+- Legal/financial boundaries for the selected offer reviewed.
+- Affordable pilot envelope approved.
 
 ## Phase 2 — Requirements and solution design
 
 Deliverables:
-- Prioritised requirements baseline.
-- Data classification and data-flow model.
-- C4 context and container views.
+- Prioritised enterprise requirements baseline.
+- Business-line workflows and responsibility matrix.
+- Data classification, source-of-truth and data-flow model.
+- C4 context and container architecture views.
 - Threat model and privacy assessment where required.
-- Technology evaluation and ADRs.
-- Deployment and operating model.
+- Technology selection and ADRs.
+- Integration contracts and provider review.
+- Costed hosting, security, backup and support model.
 
 Exit criteria:
-- High-priority requirements are testable.
-- Key technology and architecture decisions are approved.
-- Major risks have owners and treatment plans.
+- Must requirements are testable.
+- Architecture and vendors are approved.
+- Major risks have owners and treatments.
+- Operating and cost model is viable.
 
 ## Phase 3 — Foundation implementation
 
 Deliverables, subject to the approved stack:
 - Reproducible development environment.
-- Repository conventions and automated quality checks.
-- Identity and access foundation where required.
+- Repository conventions and CI quality gates.
+- Identity and access foundation.
 - Initial data and interface boundaries.
-- Automated unit and integration test pipeline.
+- Unit and integration testing.
 - Development and test environments.
+- Initial observability, secret management and backup controls.
 
 Exit criteria:
-- A minimal technical slice is demonstrably working.
+- A minimal technical slice works end-to-end.
 - Build and tests are repeatable.
-- Security and configuration checks are in place.
+- Security and configuration checks pass.
+- No production data or credentials are exposed in development.
 
-## Phase 4 — Incremental product delivery
+## Phase 4 — Pilot product delivery
 
 Deliverables:
-- Prioritised user capabilities.
-- Functional, integration and E2E tests.
+- One approved business-line capability.
+- E2E tests for critical user journeys.
 - User and operator documentation.
-- Observability and support procedures.
-- Demonstrations and acceptance evidence.
+- Support, feedback and issue workflow.
+- Cost and performance measurement.
+- Pilot acceptance evidence.
 
 Exit criteria:
-- Agreed release scope passes acceptance.
-- No unaccepted critical release blocker remains.
-- Operational readiness is demonstrated.
+- User outcome is demonstrated.
+- Delivery and support costs are measured.
+- Risks and user feedback are reviewed.
+- Owner decides whether to launch, revise or stop.
 
-## Phase 5 — Production readiness and controlled launch
+## Phase 5 — Production readiness and launch
 
 Deliverables:
-- Production deployment design and approval.
+- Production deployment and release approval.
 - Backup, recovery and incident runbooks.
-- Security and privacy review.
-- Performance and accessibility evaluation as applicable.
-- Monitoring, support and release communications.
+- Security/privacy and legal review.
+- Performance and accessibility checks where relevant.
+- Monitoring and support processes.
+- Accurate customer terms, pricing and disclosures.
 
 Exit criteria:
-- Production readiness checklist signed off by accountable owners.
-- Recovery and rollback have been rehearsed where applicable.
-- Known residual risks are documented and accepted by authorised owners.
+- Release checklist signed by accountable owners.
+- Recovery and rollback rehearsed where applicable.
+- Residual risks documented and accepted.
+- Support and finance operations ready.
 
-## Phase 6 — Continuous improvement
+## Phase 6 — Portfolio expansion and continuous improvement
+
+Expand to other business lines only when the first operating model is stable and expansion has a separate business case.
 
 Measure:
-- User outcomes and adoption.
-- Reliability and incident trends.
-- Defect escape rate and test health.
-- Security and dependency findings.
-- Operational cost and performance.
-- Documentation and requirement drift.
-
-Use retrospectives and evidence to reprioritise the backlog.
+- Customer value, conversion and retention.
+- Revenue, gross margin and contribution by line.
+- Reliability, incidents and support demand.
+- Security, privacy and compliance findings.
+- Cost, delivery capacity and provider dependency.
+- Test health and documentation drift.
 
 ## Roadmap governance
 
-Each phase must have an owner, deliverables, risks, dependencies and exit evidence. Dates and effort estimates are deliberately left unassigned until discovery and capacity planning are complete.
+Every phase has an owner, deliverables, cost envelope, risks, dependencies and exit evidence. Dates and estimates remain open until discovery and capacity planning are complete.
