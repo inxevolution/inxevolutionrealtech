@@ -46,7 +46,10 @@ Portfolio names and public references require owner confirmation. They do not es
 
 ## Website
 
-- [In X Evolution landing page source](index.html). The page is committed to `main`; public hosting (for example GitHub Pages) must be enabled separately before it has a live website URL.
+- **Canonical standalone landing page:** [landing-page/index.html](landing-page/index.html).
+- [Landing page folder and setup instructions](landing-page/README.md).
+- The page uses separate CSS and JavaScript files under `landing-page/assets/`. It is committed to `main`; public hosting (for example GitHub Pages) must be configured separately before a live website URL exists.
+- The previous root-level `index.html` is retained unchanged for backward compatibility; the canonical version is the one in `landing-page/`.
 
 ## Start here
 
