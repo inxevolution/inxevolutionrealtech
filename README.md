@@ -1,6 +1,6 @@
 # In X Evolution
 
-> **Strategic and enterprise baseline — Draft 0.3 — 23 November 2026**
+> **Strategic and enterprise baseline — Draft 0.4 — 23 November 2026**
 
 In X Evolution is proposed as a brand-led digital business ecosystem that creates, integrates, curates and operates useful digital products and services across technology, digital commerce, investment-related information and online communities.
 
@@ -17,6 +17,12 @@ Design, integrate, curate and continuously improve accessible digital solutions 
 ## Vision
 
 Build a recognised, trusted and modular digital ecosystem in which technology, commerce, information and community reinforce one another without compromising user trust, security or regulatory responsibilities.
+
+## Century-scale ambition
+
+Design In X Evolution to remain adaptable, governable, useful and capable of transferring knowledge and responsibility across generations. The 100-year horizon is a stewardship framework, not a prediction or guarantee. Products, business models, legal structures, vendors and technologies must remain replaceable.
+
+See [100-Year Longevity Strategy](docs/LONGEVITY_STRATEGY.md) and the [Wiki longevity page](docs/wiki/100-Year-Longevity-Plan.md).
 
 ## Strategic portfolio — proposed
 
@@ -41,6 +47,7 @@ Portfolio names and public references require owner confirmation. They do not es
 ## Start here
 
 - [Project Wiki — Home](docs/wiki/Home.md)
+- [100-Year Longevity Strategy](docs/LONGEVITY_STRATEGY.md)
 - [Business Strategy](docs/BUSINESS_STRATEGY.md)
 - [Project Charter](docs/PROJECT_CHARTER.md)
 - [Products and Services](docs/PRODUCTS_AND_SERVICES.md)
@@ -73,6 +80,7 @@ The repository-hosted Wiki is organised as separate Markdown pages in [docs/wiki
 6. Small, reviewable and reversible changes.
 7. Transparent pricing, risks and commercial relationships.
 8. Traceability from objective to requirement, implementation, test and release.
+9. Preserve critical knowledge while keeping technologies and business models replaceable.
 
 ## Scope
 
@@ -80,8 +88,8 @@ This repository covers In X Evolution only. Separate projects must not be added 
 
 ## Next milestone
 
-Approve the strategic definition, legal/ownership structure, first business line, target users, first offer, financial envelope and legal boundaries. Technology selection and implementation follow that approval.
+Approve the strategic definition, legal/ownership structure, first business line, target users, first offer, financial envelope, legal boundaries and the longevity stewardship principles. Technology selection and implementation follow that approval.
 
 ---
 
-**Document control:** Draft 0.3. Business model, legal structure, service catalogue, budget, regulatory classification and technology stack remain subject to validation and formal approval.
+**Document control:** Draft 0.4. Business model, legal structure, service catalogue, budget, regulatory classification, technology stack and century-scale stewardship roles remain subject to validation and formal approval.
