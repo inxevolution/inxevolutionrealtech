@@ -1,6 +1,6 @@
 # In X Evolution — Delivery Roadmap
 
-**Version:** 0.2  
+**Version:** 0.3  
 **Date:** 23 November 2026  
 **Status:** Proposed sequence — no delivery dates or budgets committed
 
@@ -18,7 +18,8 @@ Deliverables:
 - Business strategy and portfolio hypotheses.
 - Stakeholder/user map.
 - Financial and technical constraints.
-- Roadmap, open decisions and contribution guidance.
+- Longevity strategy and stewardship principles.
+- Wiki, risk register, KPI catalogue, roadmap and open decisions.
 
 Exit criteria:
 - Documentation reviewed.
@@ -36,7 +37,7 @@ Deliverables:
 - Identify applicable legal, tax, consumer, privacy and sector regulation.
 - Define stakeholder roles and decision authority.
 - Prepare budget ceiling, resource plan and commercial hypotheses.
-- Define success metrics and a pilot decision.
+- Define success metrics, succession owners for critical roles and a pilot decision.
 
 Exit criteria:
 - Project owner signs off the charter and strategy.
@@ -56,6 +57,7 @@ Deliverables:
 - Technology selection and ADRs.
 - Integration contracts and provider review.
 - Costed hosting, security, backup and support model.
+- Data export, archival and provider-exit requirements for critical information.
 
 Exit criteria:
 - Must requirements are testable.
@@ -73,6 +75,7 @@ Deliverables, subject to the approved stack:
 - Unit and integration testing.
 - Development and test environments.
 - Initial observability, secret management and backup controls.
+- Data inventory and cryptographic inventory for systems that process sensitive or long-lived information.
 
 Exit criteria:
 - A minimal technical slice works end-to-end.
@@ -105,6 +108,7 @@ Deliverables:
 - Performance and accessibility checks where relevant.
 - Monitoring and support processes.
 - Accurate customer terms, pricing and disclosures.
+- Verified succession and transfer procedures for critical accounts and roles.
 
 Exit criteria:
 - Release checklist signed by accountable owners.
@@ -122,7 +126,31 @@ Measure:
 - Reliability, incidents and support demand.
 - Security, privacy and compliance findings.
 - Cost, delivery capacity and provider dependency.
-- Test health and documentation drift.
+- Test health, succession readiness and documentation drift.
+
+## Phase 7 — Long-term stewardship and renewal
+
+This is a recurring governance responsibility, not a single project phase or a promise of 100-year survival.
+
+| Horizon | Stewardship focus |
+|---|---|
+| 0–1 year | Approve purpose, pilot, owners, risk controls and record custody |
+| 1–5 years | Prove value, financial sustainability, support and recovery |
+| 5–15 years | Renew providers, platforms, formats and business models |
+| 15–30 years | Review legal structure, governance, archives and succession |
+| 30–50 years | Prepare generational leadership and knowledge transfer |
+| 50–100 years | Reassess relevance; continue, transform, transfer or close responsibly |
+
+### Recurring review controls
+
+- Annual strategy, risk, succession and continuity review.
+- Periodic technology, vendor and dependency inventory.
+- Tested data restoration and archival readability for critical records.
+- Architecture and portability review at least annually; deeper exit/migration review every three years.
+- Revisit century-scale assumptions at least every five years and after material change.
+- Define lawful retention and deletion; do not preserve personal information indefinitely by default.
+
+Detailed controls are in [LONGEVITY_STRATEGY.md](LONGEVITY_STRATEGY.md).
 
 ## Roadmap governance
 
