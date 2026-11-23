@@ -48,7 +48,8 @@ Portfolio names and public references require owner confirmation. They do not es
 
 - **Canonical standalone landing page:** [landing-page/index.html](landing-page/index.html).
 - [Landing page folder and setup instructions](landing-page/README.md).
-- The page uses separate CSS and JavaScript files under `landing-page/assets/`. It is committed to `main`; public hosting (for example GitHub Pages) must be configured separately before a live website URL exists.
+- The Real Technology landing page uses separate CSS, JavaScript and SVG favicon assets under `landing-page/assets/`. It is committed to `main`; public hosting (for example GitHub Pages) must be configured separately before a live website URL exists.
+- The repository uses [The Unlicense](LICENSE). Read the license text and check the terms of third-party assets or separately licensed materials before reuse.
 - The previous root-level `index.html` is retained unchanged for backward compatibility; the canonical version is the one in `landing-page/`.
 
 ## Start here
