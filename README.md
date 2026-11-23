@@ -44,6 +44,10 @@ Portfolio names and public references require owner confirmation. They do not es
 **Working branch:** docs/in-x-evolution-foundation.  
 **Review:** [Pull Request #3](https://github.com/inxevolution/inxevolutionrealtech/pull/3).
 
+## Website
+
+- [In X Evolution landing page source](index.html). The page is committed to `main`; public hosting (for example GitHub Pages) must be enabled separately before it has a live website URL.
+
 ## Start here
 
 - [Project Wiki — Home](docs/wiki/Home.md)
